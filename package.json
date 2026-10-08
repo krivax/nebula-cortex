@@ -1,0 +1,43 @@
+{
+  "name": "nebula-cortex",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "node scripts/fork-desktop.mjs dev",
+    "dev:legacy": "npm run dev -w @nebula/desktop",
+    "build": "npm run typecheck && npm run build -w @nebula/desktop && npm run build:sidecar",
+    "typecheck": "tsc --noEmit",
+    "test": "node scripts/test.mjs",
+    "check": "npm run typecheck && npm run build:sidecar && npm test",
+    "check:publication": "node scripts/check-publication.mjs",
+    "sidecar": "node --import tsx packages/agent-core/src/sidecar.ts",
+    "build:sidecar": "esbuild packages/agent-core/src/sidecar.ts packages/agent-core/src/mimo-sidecar.ts --bundle --platform=node --format=cjs --outdir=dist --out-extension:.js=.cjs",
+    "desktop:dev": "node scripts/fork-desktop.mjs dev",
+    "native:test": "node scripts/native.mjs test",
+    "native:check": "node scripts/native.mjs check",
+    "native:build": "node scripts/native.mjs build",
+    "native:run": "node scripts/native.mjs run",
+    "native:app": "node scripts/native.mjs app",
+    "editor:prepare": "node scripts/prepare-editor.mjs",
+    "mimo:prepare": "node scripts/prepare-mimo.mjs",
+    "desktop:fork:prepare": "node scripts/fork-desktop.mjs prepare",
+    "desktop:fork:build": "node scripts/fork-desktop.mjs build",
+    "desktop:fork:run": "node scripts/fork-desktop.mjs run",
+    "desktop:fork:app": "node scripts/fork-desktop.mjs app",
+    "desktop:fork:archive": "node scripts/archive-desktop.mjs",
+    "desktop:fork:test": "node scripts/fork-desktop.mjs test",
+    "desktop:fork:reflex-eval": "node scripts/fork-desktop.mjs reflex-eval",
+    "desktop:fork:integration": "node scripts/fork-desktop.mjs integration",
+    "desktop:legacy:dev": "node scripts/native.mjs dev"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.3",
+    "tsx": "^4.20.0",
+    "esbuild": "^0.25.0",
+    "@types/node": "^22.0.0"
+  }
+}

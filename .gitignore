@@ -1,0 +1,14 @@
+node_modules/
+dist/
+target/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log
+.nebula-local.json
+.editor-runtime/
+.mimo-runtime/
+
+.desktop-fork/
+.desktop-runtime/

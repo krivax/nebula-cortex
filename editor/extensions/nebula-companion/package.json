@@ -1,0 +1,63 @@
+{
+  "name": "nebula-companion",
+  "displayName": "Editor Nebula",
+  "publisher": "nebula-cortex",
+  "version": "0.2.0",
+  "description": "Integra\u00e7\u00e3o do editor de projetos ao Nebula Cortex.",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "main": "./extension.cjs",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    }
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "nebula.editorInfo",
+        "title": "Nebula: Sobre o editor integrado"
+      },
+      {
+        "command": "nebula.welcome",
+        "title": "Nebula: Abrir in\u00edcio do editor"
+      },
+      {
+        "command": "nebula.explain",
+        "title": "Nebula: Explicar c\u00f3digo"
+      },
+      {
+        "command": "nebula.fix",
+        "title": "Nebula: Corrigir c\u00f3digo"
+      },
+      {
+        "command": "nebula.tests",
+        "title": "Nebula: Criar testes"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "nebula.explain",
+          "group": "nebula@1",
+          "when": "resourceScheme == file"
+        },
+        {
+          "command": "nebula.fix",
+          "group": "nebula@2",
+          "when": "resourceScheme == file"
+        },
+        {
+          "command": "nebula.tests",
+          "group": "nebula@3",
+          "when": "resourceScheme == file"
+        }
+      ]
+    }
+  }
+}

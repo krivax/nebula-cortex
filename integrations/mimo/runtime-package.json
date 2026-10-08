@@ -1,0 +1,23 @@
+{
+  "name": "@mimo-ai/mimocode-darwin-arm64",
+  "version": "0.1.15",
+  "gitHead": null,
+  "dist": {
+    "shasum": "e347b0a5adf83a378875fbc65b744bde28d25913",
+    "tarball": "https://registry.npmjs.org/@mimo-ai/mimocode-darwin-arm64/-/mimocode-darwin-arm64-0.1.15.tgz",
+    "fileCount": 3,
+    "integrity": "sha512-euWpZVU9r6pzLEQBspzfwYJG5u20/N6yFG2EG6Ovd/i2rySETJ0ohmiqyKPaYzeKe2oK6BlJPsfkw3TDDYhbTQ==",
+    "signatures": [
+      {
+        "sig": "MEUCIFkrcHvBOy0sacZeMhZhVRWxSBQZKe1dvlYX/cV58ybNAiEAmnmYOB+7ozjhEgAJ78ni3KZclKbVWWwu2FoADU2ucwE=",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      },
+      {
+        "sig": "MEQCIFhJ8Oo2gR1uJF73m+koiiAXgxSvql3OckyHWJFq9T9IAiA5iG09KRwy8iZ6DGbSF/SzeqFSjCFESyXghDfn/TdOPg==",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      }
+    ],
+    "unpackedSize": 100235447
+  },
+  "license": "MIT"
+}

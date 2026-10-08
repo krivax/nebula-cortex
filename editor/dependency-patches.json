@@ -1,0 +1,26 @@
+[
+  {
+    "name": "brace-expansion",
+    "version": "1.1.21",
+    "integrity": "sha512-9zeA+KLZNNzglF2TPKRQEDyx6Yby7daAkuy8MiPzpXPsYDWi/DRM8jmwUDxokQjYqBpv5DgPiwD4h4ZZSy1Ujw==",
+    "path": "node_modules/code-server/node_modules/brace-expansion"
+  },
+  {
+    "name": "brace-expansion",
+    "version": "5.0.12",
+    "integrity": "sha512-YovQ3rzhaLMIrDjNDMkNS01tea93qhEhG5xy8f6+R0l+dw3Ki+5sCoIoI942iuLZTHWogWktgwVDhU09iNEimQ==",
+    "path": "node_modules/code-server/node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion"
+  },
+  {
+    "name": "ip-address",
+    "version": "10.7.2",
+    "integrity": "sha512-7H/2gFSIitxc0hG3nOI1glS8QLo/EHBFFLk8vEUjXY/xu0AdL8jZ9U1IzO2PUm0d2D/ofQcAifb0g6OBkt8U7w==",
+    "path": "node_modules/code-server/node_modules/ip-address"
+  },
+  {
+    "name": "js-yaml",
+    "version": "4.3.2",
+    "integrity": "sha512-SFNOvSJ+Dgf/9An904Yx+CgSlIPCkIpao4qo51lpee25TIRejdH3rhR4EZMGoNx3/TP3O+wzWuiTFl4sqbltzA==",
+    "path": "node_modules/code-server/node_modules/@eslint/eslintrc/node_modules/js-yaml"
+  }
+]

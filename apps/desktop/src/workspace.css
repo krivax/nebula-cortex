@@ -1,0 +1,100 @@
+/* Editor workbench, following VS Code's Dark Modern proportions. */
+.vscode-workspace { position: relative; display: flex; flex-direction: column; color: #cccccc; background: #1f1f1f; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; }
+.editor-body { display: flex; flex: 1; min-height: 0; min-width: 0; }
+.activity-bar { width: 48px; flex-shrink: 0; display: flex; flex-direction: column; background: #181818; border-right: 1px solid #2b2b2b; }
+.activity-bar > button { position: relative; width: 48px; height: 48px; border: 0; border-left: 2px solid transparent; background: transparent; color: #868686; display: grid; place-items: center; }
+.activity-bar > button:hover { color: #cccccc; }
+.activity-bar > button.active { border-left-color: #0078d4; color: #dddddd; }
+.activity-bar > button:disabled { opacity: .4; }
+.activity-spacer { flex: 1; }
+.activity-count { position: absolute; top: 25px; right: 7px; background: #0078d4; color: white; border-radius: 8px; min-width: 15px; padding: 1px 3px; font-size: 9px; }
+.vscode-explorer { width: 245px; padding: 0; background: #181818; border: 0; overflow-y: auto; overflow-x: hidden; }
+.vscode-sidebar-heading { display: flex; align-items: center; justify-content: space-between; height: 35px; padding: 0 12px 0 20px; font-size: 11px; color: #bbbbbb; }
+.workspace-icon-button { display: grid; place-items: center; width: 22px; height: 22px; padding: 2px; flex-shrink: 0; background: transparent; border: 0; border-radius: 3px; color: #bfbfbf; }
+.workspace-icon-button:hover, .workspace-icon-button.active { background: #333333; color: #eeeeee; }
+.workspace-icon-button:disabled { opacity: .4; cursor: default; }
+.folder-actions { display: flex; align-items: center; justify-content: space-between; padding: 4px 12px 10px 17px; gap: 5px; }
+.folder-actions > button:first-child { display: flex; align-items: center; gap: 7px; color: #cccccc; background: transparent; border: 1px solid #424242; border-radius: 3px; padding: 5px 8px; font-size: 11px; flex: 1; }
+.folder-actions > button:first-child:hover { background: #2b2b2b; }
+.explorer-section-heading { border: 0; border-top: 1px solid #2b2b2b; background: transparent; height: 27px; display: flex; align-items: center; gap: 3px; width: 100%; padding: 0 9px 0 5px; font-size: 10px; font-weight: 600; text-align: left; }
+.explorer-section-heading > span { margin-left: auto; font-size: 9px; color: #888888; }
+.open-editor-row { display: flex; align-items: center; min-height: 23px; padding: 0 10px; gap: 2px; }
+.open-editor-row.selected { background: #37373d; }
+.open-editor-row > button:last-child { flex: 1; display: flex; align-items: center; gap: 6px; min-width: 0; text-align: left; border: 0; background: transparent; padding: 2px; font-size: 12px; }
+.open-editor-row > button:last-child span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.open-editor-row small { font-size: 10px; color: #858585; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.preview { font-style: italic; }
+.workspace-section-header { height: 28px; border-top: 1px solid #2b2b2b; margin-top: 7px; padding: 0 9px 0 11px; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 10px; }
+.workspace-section-header > div { display: flex; gap: 2px; }
+.workspace-tree { padding-bottom: 20px; }
+.tree-row { display: flex; align-items: center; gap: 4px; height: 23px; line-height: 23px; font-size: 12px; user-select: none; cursor: pointer; padding-right: 12px; border: 1px solid transparent; }
+.tree-row:hover { background: #2a2d2e; }
+.tree-row.selected { background: #37373d; }
+.tree-row:focus-visible { outline: none; border-color: #007fd4; background: #04395e; }
+.tree-row > svg, .tree-row .file-type-icon, .tree-row .tree-chevron-spacer { flex-shrink: 0; }
+.tree-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; }
+.tree-chevron-spacer { width: 14px; }
+.folder-icon { color: #c09553; }
+.dirty-indicator { font-style: normal; font-size: 10px; color: #e0e0e0; }
+.file-type-icon { width: 16px; height: 16px; display: grid; place-items: center; font-family: 'Segoe UI', sans-serif; font-size: 8px; font-weight: 700; }
+.file-type-icon.ts { color: #61a6e6; }
+.file-type-icon.js { color: #e8c65b; }
+.file-icon { color: #9dbbd9; flex-shrink: 0; }
+.file-icon.json { color: #d6b55e; }
+.file-icon.text { color: #9ebae0; }
+.tree-children { position: relative; }
+.new-entry-form { padding: 4px 7px; display: flex; align-items: center; gap: 2px; }
+.new-entry-form input { width: 0; flex: 1; border: 1px solid #007fd4; background: #313131; color: #eeeeee; font: inherit; font-size: 12px; padding: 4px 6px; }
+.explorer-resize { width: 4px; flex-shrink: 0; cursor: col-resize; background: #181818; border-right: 1px solid #2b2b2b; touch-action: none; }
+.explorer-resize:hover, .explorer-resize:focus-visible { background: #0078d4; outline: 0; }
+.vscode-workspace .editor-column { background: #1f1f1f; }
+.vscode-tabbar { height: 35px; flex-shrink: 0; display: flex; justify-content: space-between; background: #181818; border-bottom: 1px solid #2b2b2b; }
+.editor-tabs { display: flex; min-width: 0; overflow-x: auto; scrollbar-width: thin; scrollbar-color: #424242 transparent; }
+.editor-tab { display: flex; align-items: center; flex-shrink: 0; border-right: 1px solid #2b2b2b; background: #181818; border-top: 1px solid transparent; color: #969696; padding-right: 4px; }
+.editor-tab.active { background: #1f1f1f; border-top-color: #0078d4; color: #ffffff; }
+.editor-tab > button:first-child { display: flex; align-items: center; gap: 7px; background: transparent; border: 0; font-size: 12px; padding: 8px 8px 8px 13px; color: inherit; white-space: nowrap; font-style: inherit; }
+.tab-close { display: grid; place-items: center; background: transparent; border: 0; width: 22px; height: 22px; border-radius: 3px; color: inherit; }
+.tab-close:hover { background: #3c3c3c; }
+.tabbar-actions { display: flex; align-items: center; gap: 4px; padding: 0 8px; }
+.editor-breadcrumbs { flex-shrink: 0; min-height: 27px; display: flex; align-items: center; padding: 0 13px; gap: 3px; font-size: 11px; color: #9c9c9c; overflow-x: auto; white-space: nowrap; }
+.editor-breadcrumbs > span { display: flex; gap: 4px; align-items: center; }
+.editor-breadcrumbs > small { margin-left: auto; font-size: 10px; padding-left: 12px; }
+.workspace-notice { display: flex; justify-content: space-between; gap: 10px; align-items: center; padding: 5px 12px; color: #b9c7d2; background: #21303b; font-size: 11px; }
+.vscode-workspace .monaco-host { min-height: 100px; }
+.vscode-statusbar { height: 22px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; background: #0078d4; color: #ffffff; padding: 0 10px; font-size: 10px; }
+.vscode-statusbar > span, .vscode-statusbar > div { display: flex; gap: 8px; align-items: center; }
+.vscode-statusbar > div { gap: 16px; }
+.editor-empty { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #757575; gap: 12px; padding: 20px; }
+.editor-empty > svg { opacity: .5; }
+.editor-empty h2 { font-size: 25px; font-weight: 400; color: #969696; margin: 3px 0; }
+.editor-empty p { font-size: 12px; margin-bottom: 14px; }
+.editor-empty button { display: flex; justify-content: space-between; align-items: center; gap: 30px; color: #aaaaaa; background: transparent; border: 0; font-size: 12px; padding: 4px 8px; width: 280px; }
+.editor-empty button:hover { color: #eeeeee; }
+kbd { font-size: 10px; border: 1px solid #484848; padding: 2px 5px; border-radius: 3px; }
+.workspace-search { padding: 5px 12px 20px; }
+.workspace-search > input { width: 100%; background: #313131; border: 1px solid #3c3c3c; color: #cccccc; padding: 7px; font-size: 12px; }
+.workspace-search > input:focus { border-color: #0078d4; outline: 0; }
+.search-result-count { display: block; font-size: 10px; color: #8c8c8c; line-height: 1.6; margin: 10px 1px; }
+.search-result { display: block; width: 100%; overflow: hidden; text-align: left; border: 0; border-bottom: 1px solid #2b2b2b; background: transparent; padding: 9px 4px; }
+.search-result:hover { background: #2a2d2e; }
+.search-result > span { display: flex; align-items: center; gap: 5px; font-size: 11px; }
+.search-result small { font-size: 9px; color: #898989; }
+.search-result code { display: block; color: #cccccc; font-size: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 6px 0; }
+.search-result > small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.editor-settings { position: absolute; z-index: 10; bottom: 27px; left: 44px; background: #252526; border: 1px solid #454545; border-radius: 5px; box-shadow: 0 8px 30px #0008; width: 260px; padding: 15px; }
+.editor-settings h3 { display: flex; justify-content: space-between; align-items: center; font-size: 12px; margin: 0 0 14px; font-weight: 500; }
+.editor-settings label { display: flex; align-items: center; gap: 6px; margin: 10px 0; font-size: 12px; }
+.editor-settings p { font-size: 10px; color: #999999; line-height: 1.7; }
+.quick-overlay { position: absolute; inset: 0; z-index: 20; background: #0002; display: flex; justify-content: center; align-items: flex-start; }
+.quick-open { margin-top: 10px; background: #252526; border: 1px solid #454545; border-radius: 6px; width: min(620px, calc(100% - 40px)); padding: 7px; box-shadow: 0 10px 30px #000a; }
+.quick-open input { display: block; width: 100%; background: #313131; color: #eeeeee; border: 1px solid #007fd4; padding: 8px; font: inherit; font-size: 12px; outline: 0; }
+.quick-open [role=listbox] { max-height: 340px; overflow: auto; margin-top: 5px; }
+.quick-open [role=option] { display: flex; align-items: center; gap: 8px; padding: 7px 8px; font-size: 12px; cursor: pointer; border-radius: 3px; white-space: nowrap; overflow: hidden; }
+.quick-open [role=option] span { overflow: hidden; text-overflow: ellipsis; }
+.quick-open [role=option].selected { background: #04395e; }
+.quick-open [role=option]:hover { background: #2a2d2e; }
+.quick-open p { padding: 0 8px; font-size: 12px; color: #999999; }
+@media (max-width: 720px) { .activity-bar, .activity-bar > button { width: 40px; } .vscode-explorer { max-width: 185px; } .vscode-statusbar .memory-label { display: none; } .vscode-statusbar > div { gap: 8px; } .vscode-statusbar > div span:nth-child(2), .vscode-statusbar > div span:nth-child(4) { display: none; } .editor-breadcrumbs { font-size: 10px; } .tree-row { font-size: 11px; } }
+/* Keep the tree stationary while a preview tab becomes an open editor. */
+.open-editors { height: 72px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #424242 transparent; }
+.workspace-conflict{display:flex;align-items:center;gap:10px;background:#4b351f;color:#f1d4aa;font-size:11px;padding:8px 12px;flex-wrap:wrap}.workspace-conflict>span{flex:1}.workspace-conflict button{background:#624628;border:1px solid #977345;color:#ffe0b2;border-radius:3px;font-size:11px;padding:4px 8px}

@@ -1,0 +1,15 @@
+.code-oss-workspace{display:flex;flex:1;flex-direction:column;min-width:0;min-height:0;background:#1f1f1f;color:#ccc}
+.code-oss-toolbar{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 12px;border-bottom:1px solid #303030;background:#181818;font-size:12px}
+.code-oss-toolbar>span,.code-oss-toolbar>div,.code-oss-toolbar button,.code-oss-welcome button{display:flex;align-items:center;gap:8px}
+.code-oss-toolbar small{font-size:10px;color:#8faacf;border:1px solid #354358;border-radius:4px;padding:2px 5px}
+.code-oss-toolbar button{border:1px solid #3c3c3c;background:#242424;border-radius:4px;padding:5px 8px;font-size:11px}
+.code-oss-runtime{font-size:10px;color:#969696}
+.code-oss-host{flex:1;min-height:100px;position:relative}
+.code-oss-welcome{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center}
+.code-oss-welcome>svg{color:#7290b6;margin-bottom:15px}
+.code-oss-welcome h2{font-size:23px;font-weight:500;margin:5px 0 14px}
+.code-oss-welcome p{font-size:13px;color:#9b9b9b;line-height:1.5;margin:3px 0}
+.code-oss-welcome button{margin-top:25px;background:#0078d4;border:1px solid #1589e2;border-radius:4px;padding:10px 16px;font-size:13px;color:white}
+.code-oss-error{font-size:12px;margin:0;padding:10px 14px;background:#3b2920;color:#f2c99b;line-height:1.5}
+.code-oss-spinner{animation:editor-spin 1s linear infinite}@keyframes editor-spin{to{transform:rotate(360deg)}}
+@media(max-width:800px){.code-oss-runtime{display:none}}

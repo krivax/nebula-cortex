@@ -1,0 +1,84 @@
+name: Native desktop builds
+
+on:
+  push:
+    branches: [main, 'codex/**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: desktop-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  desktop:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-14
+            platform: macos-arm64
+          - os: ubuntu-24.04
+            platform: linux-x64
+          - os: windows-2022
+            platform: windows-x64
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24.21.0'
+          cache: npm
+      - name: Linux desktop dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential python3 libgtk-3-0 libnss3 libasound2t64 libgbm1 libsecret-1-0 xvfb dbus-x11 gnome-keyring
+      - run: npm ci
+      - name: Prepare macOS / Linux runtimes
+        if: runner.os != 'Windows'
+        run: npm run desktop:fork:prepare
+      - name: Build native Windows Code-OSS and runtimes
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+          $vs = & $vswhere -latest -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
+          if (!$vs) { throw 'Visual Studio C++ Build Tools not found' }
+          Import-Module "$vs\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"
+          Enter-VsDevShell -VsInstallPath $vs -SkipAutomaticLocation -DevCmdArguments '-arch=x64 -host_arch=x64'
+          npm run desktop:fork:prepare
+          exit $LASTEXITCODE
+      - run: npm run check
+      - run: npm run check:publication
+      - run: npm run desktop:fork:test
+      - name: Native integration on macOS / Windows
+        if: runner.os != 'Linux'
+        run: npm run desktop:fork:integration
+      - name: Linux integration with Secret Service
+        env:
+          NEBULA_INTEGRATION_NO_SANDBOX: '1'
+        if: runner.os == 'Linux'
+        run: |
+          xvfb-run -a dbus-run-session bash -e -c '
+            printf "test-keyring-password\n" | gnome-keyring-daemon --unlock --components=secrets
+            npm run desktop:fork:integration
+          '
+      - run: npm run desktop:fork:app
+      - run: npm run desktop:fork:archive
+      - name: Upload development package after successful checks
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: nebula-${{ matrix.platform }}
+          path: |
+            .desktop-fork/packages/desktop/dist/nebula-*.tar.gz
+            .desktop-fork/packages/desktop/dist/nebula-*.zip
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 7

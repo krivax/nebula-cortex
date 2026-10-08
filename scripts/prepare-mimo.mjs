@@ -1,0 +1,38 @@
+import { createHash } from 'node:crypto';
+import { mkdir, readFile, writeFile, chmod, rm, copyFile } from 'node:fs/promises';
+import { createWriteStream } from 'node:fs';
+import { pipeline } from 'node:stream/promises';
+import { Transform, Readable } from 'node:stream';
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+import { resolve } from 'node:path';
+import { desktopPlatform } from './desktop-platform.mjs';
+const root = fileURLToPath(new URL('..', import.meta.url));
+const platform = desktopPlatform().key;
+const packages = JSON.parse(await readFile(resolve(root, 'integrations/mimo/runtime-packages.json'), 'utf8'));
+const info = packages[platform];
+if (!info) throw new Error('Distribuição MiMo não cadastrada para esta plataforma.');
+const target = resolve(root, '.mimo-runtime', platform);
+await mkdir(target, { recursive: true });
+const archive = resolve(target, 'runtime.tgz');
+const [algorithm, expected] = info.dist.integrity.split('-');
+if (algorithm !== 'sha512' || !info.dist.tarball.startsWith('https://registry.npmjs.org/@mimo-ai/')) throw new Error('Origem inválida');
+const hash = createHash(algorithm); let bytes = 0;
+const response = await fetch(info.dist.tarball);
+if (!response.ok || !response.body) throw new Error('Não foi possível baixar o motor oficial.');
+await pipeline(Readable.fromWeb(response.body), new Transform({ transform(chunk, _, next) {
+  bytes += chunk.length; if (bytes > 200 * 1024 * 1024) return next(new Error('Download excede o limite'));
+  hash.update(chunk); next(null, chunk);
+}}), createWriteStream(archive));
+if (hash.digest('base64') !== expected) { await rm(archive); throw new Error('Integridade do pacote MiMo inválida.'); }
+const listing = spawnSync('tar', ['-tzf', archive], { encoding: 'utf8' });
+if (listing.status || listing.stdout.split('\n').filter(Boolean).some(path => !path.startsWith('package/') || path.split('/').includes('..'))) throw new Error('Arquivo de distribuição inválido');
+const extracted = spawnSync('tar', ['-xzf', archive, '-C', target, '--strip-components=1']);
+if (extracted.status) throw new Error('Extração do runtime falhou');
+const executable = platform.startsWith('win32-') ? 'bin/mimo.exe' : 'bin/mimo';
+await chmod(resolve(target, executable), 0o755);
+for (const file of ['LICENSE', 'USE_RESTRICTIONS.md']) await copyFile(resolve(root, 'integrations/mimo', file), resolve(target, file));
+const binary = await readFile(resolve(target, executable));
+await writeFile(resolve(target, 'ready.json'), JSON.stringify({ version: info.version, platform, integrity: info.dist.integrity, binarySha256: createHash('sha256').update(binary).digest('hex') }, null, 2));
+await rm(archive);
+console.log(`MiMo ${info.version} preparado e verificado em ${target}`);

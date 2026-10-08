@@ -1,0 +1,55 @@
+{
+  "darwin-arm64": {
+    "name": "@mimo-ai/mimocode-darwin-arm64",
+    "version": "0.1.15",
+    "gitHead": null,
+    "dist": {
+      "shasum": "e347b0a5adf83a378875fbc65b744bde28d25913",
+      "tarball": "https://registry.npmjs.org/@mimo-ai/mimocode-darwin-arm64/-/mimocode-darwin-arm64-0.1.15.tgz",
+      "fileCount": 3,
+      "integrity": "sha512-euWpZVU9r6pzLEQBspzfwYJG5u20/N6yFG2EG6Ovd/i2rySETJ0ohmiqyKPaYzeKe2oK6BlJPsfkw3TDDYhbTQ==",
+      "signatures": [
+        {
+          "sig": "MEUCIFkrcHvBOy0sacZeMhZhVRWxSBQZKe1dvlYX/cV58ybNAiEAmnmYOB+7ozjhEgAJ78ni3KZclKbVWWwu2FoADU2ucwE=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "sig": "MEQCIFhJ8Oo2gR1uJF73m+koiiAXgxSvql3OckyHWJFq9T9IAiA5iG09KRwy8iZ6DGbSF/SzeqFSjCFESyXghDfn/TdOPg==",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "unpackedSize": 100235447
+    },
+    "license": "MIT"
+  },
+  "linux-x64": {
+    "name": "@mimo-ai/mimocode-linux-x64-baseline",
+    "version": "0.1.15",
+    "gitHead": null,
+    "dist": {
+      "tarball": "https://registry.npmjs.org/@mimo-ai/mimocode-linux-x64-baseline/-/mimocode-linux-x64-baseline-0.1.15.tgz",
+      "integrity": "sha512-yd6sG0t/UY2R2AV3tpSojRiC1x1AlFqLfIBZLntIvnl3DM98NnYMoOAb9nJptjm6l2MXyteiLMjR+M+H/FniLg=="
+    },
+    "license": "MIT"
+  },
+  "linux-arm64": {
+    "name": "@mimo-ai/mimocode-linux-arm64",
+    "version": "0.1.15",
+    "gitHead": null,
+    "dist": {
+      "tarball": "https://registry.npmjs.org/@mimo-ai/mimocode-linux-arm64/-/mimocode-linux-arm64-0.1.15.tgz",
+      "integrity": "sha512-x5x7cRstiRlSuXIPUcXs8UTH5JxbJwrd2XwKlX4Z8bxuXf8kxu7udm0qMuti7QRQ3U2vY/G4uTSZ5B1Vz3S4yw=="
+    },
+    "license": "MIT"
+  },
+  "win32-x64": {
+    "name": "@mimo-ai/mimocode-windows-x64-baseline",
+    "version": "0.1.15",
+    "gitHead": null,
+    "dist": {
+      "tarball": "https://registry.npmjs.org/@mimo-ai/mimocode-windows-x64-baseline/-/mimocode-windows-x64-baseline-0.1.15.tgz",
+      "integrity": "sha512-YVmJuLBgf16SIYfIIS+3AZDC39QG7E3saeXtiiDvWbyj74ZpZD6ig4tmfS69GPkLqernhIjXK9tJIsZOyBiy3A=="
+    },
+    "license": "MIT"
+  }
+}

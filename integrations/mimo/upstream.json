@@ -1,0 +1,29 @@
+{
+  "repository": "https://github.com/XiaomiMiMo/MiMo-Code",
+  "revision": "698f0f29058848b154eabd73d3a7955d4f18eb00",
+  "revisionDate": "2026-09-30T09:46:24Z",
+  "reviewedAt": "2026-10-01",
+  "cliVersion": "0.1.15",
+  "sdkVersion": "0.1.15",
+  "declaredLicense": "MIT",
+  "additionalPolicyFile": "USE_RESTRICTIONS.md",
+  "maintainedPackages": [
+    "packages/cli",
+    "packages/plugin",
+    "packages/sdk"
+  ],
+  "desktopAssessment": "Desktop removed from current main. Historical official desktop fork recovered at 14dfe68a1c121f859544ba810b3c308e8501bfb2; see ../mimo-desktop/upstream.json",
+  "status": "integrated-native-engine",
+  "distributedRuntime": {
+    "package": "@mimo-ai/mimocode-darwin-arm64",
+    "version": "0.1.15",
+    "metadata": "runtime-package.json",
+    "sourceRevisionMapping": "npm package does not publish gitHead; reviewed revision is not asserted as the binary source"
+  },
+  "integration": {
+    "transport": "Authenticated loopback server via official SDK and supervised Node bridge",
+    "editor": "Existing Code-OSS workbench in Tauri child WebView",
+    "credentials": "macOS Keychain per endpoint",
+    "verification": "Official binary with controlled local OpenAI-compatible API; no paid API call"
+  }
+}

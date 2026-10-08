@@ -1,0 +1,1 @@
+{"main-window":{"identifier":"main-window","description":"Somente a WebView da conversa pode usar IPC; o workbench local não recebe capabilities","local":true,"webviews":["main"],"permissions":["core:default"]}}

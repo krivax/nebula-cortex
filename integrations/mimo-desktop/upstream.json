@@ -1,0 +1,37 @@
+{
+  "repository": "https://github.com/XiaomiMiMo/MiMo-Code",
+  "revision": "14dfe68a1c121f859544ba810b3c308e8501bfb2",
+  "branch": "codex/nebula-desktop",
+  "version": "0.1.15",
+  "license": "MIT",
+  "reviewedAt": "2026-10-03",
+  "desktopRemovedBy": "f0293bf8ca10e8e3d1241e179f2c6a602e2132c9",
+  "assessment": "Official historical desktop source, inherited and unmaintained. Equivalence with Xiaomi's currently distributed MiMo Desktop has not been established.",
+  "patch": "nebula.patch",
+  "bun": {
+    "version": "1.3.14",
+    "tarball": "https://registry.npmjs.org/@oven/bun-darwin-aarch64/-/bun-darwin-aarch64-1.3.14.tgz",
+    "integrity": "sha512-Omj20SuiHBOUjUBIyqtkNjSUIjOtEOJwmbix/ZyFH4BaQ6OZTaaRWIR4TjHVz0yadHgli6lLTiAh1uarnvD49A==",
+    "platforms": {
+      "darwin-arm64": {
+        "tarball": "https://registry.npmjs.org/@oven/bun-darwin-aarch64/-/bun-darwin-aarch64-1.3.14.tgz",
+        "integrity": "sha512-Omj20SuiHBOUjUBIyqtkNjSUIjOtEOJwmbix/ZyFH4BaQ6OZTaaRWIR4TjHVz0yadHgli6lLTiAh1uarnvD49A=="
+      },
+      "linux-x64": {
+        "tarball": "https://registry.npmjs.org/@oven/bun-linux-x64-baseline/-/bun-linux-x64-baseline-1.3.14.tgz",
+        "integrity": "sha512-q/8EdOC0yUE8FPeoOVq8/Pw5I9/tJaYmUfO/uDUAREx8IUnOJH1RJ5A3BjFqre8pvJoiZA9AovPJq5FnNNjSxA=="
+      },
+      "linux-arm64": {
+        "tarball": "https://registry.npmjs.org/@oven/bun-linux-aarch64/-/bun-linux-aarch64-1.3.14.tgz",
+        "integrity": "sha512-X5SsPZHs+iYO8R/efIcRtc7gT2Q2DgPfliCxEkx4cXBumwkw0c/EsHMNwH3EgGpCDaZ7IYVPhpCG/xBOQHEwZw=="
+      },
+      "win32-x64": {
+        "tarball": "https://registry.npmjs.org/@oven/bun-windows-x64-baseline/-/bun-windows-x64-baseline-1.3.14.tgz",
+        "integrity": "sha512-uIjLUC1S9DWgICzuoMba7vurBJnBruE4S5CxnvmZkdqWVXRzx1Rgu636HoH+k0qeaQCFh3jeG3JQ1y6fRHv0sw=="
+      }
+    }
+  },
+  "patchSha256": "eb24dd6de43d7e535447d558be899f4eb0823fcaf34d826ecc27fc4e4143db96",
+  "forkCommit": "ea338b3dfed683c98bcb71b45186cb3ccd315a54",
+  "patchUpdatedAt": "2026-10-08"
+}
